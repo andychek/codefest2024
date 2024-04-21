@@ -7,6 +7,7 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from PIL import Image 
 import requests
+import time
 url = "https://hozencollection.com/cdn/shop/articles/muilti1_180x.jpg"
 
 MARGIN = 10  # pixels
@@ -68,6 +69,7 @@ def visualize(image, detection_result) -> np.ndarray:
 
     return response
 
+time.sleep(3)
 # STEP 2: Create an ObjectDetector object.
 base_options = python.BaseOptions(model_asset_path='efficientdet.tflite')
 options = vision.ObjectDetectorOptions(base_options=base_options,
